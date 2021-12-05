@@ -1,0 +1,660 @@
+@import "setting";
+
+/* base */
+html {
+  font-size: 62.5%; /* ルートpc 10px */
+  @include sp {
+    font-size: 50%; /* ルートsp 8px */
+  }
+}
+body {
+  font-size: 2em; /* デフォルト pc20px sp16px */
+  font-family: "Objective-bold-italic", "Noto Sans JP", sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+}
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+.section_title {
+  font-size: 6rem;
+  width: fit-content;
+  margin: 0 auto 30px;
+}
+.result {
+  font-size: 3.2rem;
+  color: $black;
+  .sp_br {
+    display: none;
+    @include sp {
+      display: block;
+    }
+  }
+  .number {
+    font-size: 10rem;
+    color: #000;
+  }
+}
+
+/*===========
+inview
+===========*/
+.fadeIn_up {
+  opacity: 0;
+  transform: translate(0, 50%);
+  transition: 2s;
+}
+.fadeIn_up.is-show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+/*===========
+header
+===========*/
+header {
+  position: absolute;
+  top: 6.23%;
+  left: 2.81%;
+  z-index: 1;
+  a {
+    font-family: "Objective-bold";
+    font-size: 4.2rem;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+  }
+}
+
+/*===========
+firstView
+===========*/
+.fv {
+  height: 75vh;
+  width: 100%;
+  position: relative;
+  h1 {
+    font-size: vw(180);
+    color: $accent;
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+}
+
+/*===========
+intro
+===========*/
+.intro {
+  padding: 34.1% 0 21.6%;
+  background: #fff;
+  @include sp {
+    padding: 240px 0 120px;
+  }
+  &_inner {
+    max-width: 100%;
+    margin: 0 18.2%;
+    padding: 0 15px;
+    p {
+      font-size: 2.4rem;
+      color: $black;
+      margin-bottom: 1.6em;
+      line-height: 2;
+    }
+    p:first-child {
+      font-size: 3.2rem;
+      font-weight: bold;
+      color: #000;
+      text-align: center;
+      margin-bottom: 41px;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*===========
+skill
+===========*/
+.skill {
+  background: $gray;
+  padding: 164px 128px 239px;
+  position: relative;
+  @include sp {
+    padding: 100px 64px;
+  }
+  .pf {
+    transform: rotate(90deg);
+    transform-origin: left bottom;
+    position: absolute;
+    left: -50px;
+    top: -200px;
+    z-index: 2;
+    font-size: 300px;
+    color: #ffffff;
+    @include sp {
+      font-size: 150px;
+      position: absolute;
+      left: -35px;
+      top: -100px;
+    }
+  }
+  .section_title {
+    margin-bottom: 207px;
+  }
+  .section_title::before {
+    content: "Skills";
+    display: block;
+    color: $gray;
+    text-shadow: 1px 1px 0 $accent, -1px 1px 0 $accent, 1px -1px 0 $accent,
+      -1px -1px 0 $accent;
+    transform: translate(0.5%, 90%);
+    position: relative;
+    z-index: -1;
+  }
+  .block_left {
+    width: 65.4%;
+    height: 22.5%;
+    background: $accent;
+    position: absolute;
+    top: 17%;
+    left: 0;
+    z-index: 1;
+  }
+  .block_right {
+    width: 65.4%;
+    height: 22.5%;
+    background: $accent;
+    position: absolute;
+    top: 59%;
+    right: 0;
+    z-index: 1;
+  }
+  .code {
+    margin: 0 0 57px 100px;
+    position: relative;
+    z-index: 3;
+    .number {
+      margin: 0 20px 0 27px;
+      @include sp {
+        margin: 0;
+      }
+    }
+    .unit {
+      color: $black;
+    }
+  }
+  .card_left {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 330px;
+    position: relative;
+    z-index: 3;
+    figure {
+      width: 49%;
+      margin-right: 10%;
+      @include sp {
+        width: 100%;
+        margin: 0 0 20px;
+      }
+    }
+    p {
+      width: 41%;
+      max-height: 290px;
+      overflow: hidden;
+      line-height: 2;
+      color: $black;
+      @include sp {
+        width: 100%;
+      }
+    }
+  }
+  .design {
+    width: fit-content;
+    margin: 0 0 75px auto;
+    position: relative;
+    z-index: 3;
+    .number {
+      margin: 0 59px 0 42px;
+      @include sp {
+        margin: 0;
+      }
+    }
+    .unit {
+      color: $black;
+    }
+  }
+  .card_right {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    position: relative;
+    z-index: 3;
+    figure {
+      width: 49%;
+      margin-left: 10%;
+      @include sp {
+        width: 100%;
+        margin: 0 0 20px;
+      }
+    }
+    p {
+      width: 41%;
+      line-height: 2;
+      color: $black;
+      @include sp {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*===========
+works
+===========*/
+.works {
+  padding: 16.6% 10% 7.5% 2.8%;
+  background: #fff;
+  position: relative;
+  .line {
+    width: 1px;
+    height: 100%;
+    background: #707070;
+    position: absolute;
+    top: 0;
+    @include sp {
+      position: absolute;
+      left: 67px;
+    }
+  }
+  &_inner {
+    width: 100%;
+    @include sp {
+      padding: 100px 48px;
+    }
+    .section_title {
+      margin-bottom: 92px;
+    }
+    .section_title::before {
+      content: "Recent works";
+      display: block;
+      font-size: 2.4rem;
+      width: fit-content;
+      color: $accent;
+      margin: 0 auto 33px;
+    }
+    .section_title::after {
+      content: "Works";
+      display: block;
+      color: #fff;
+      text-shadow: 1px 1px 0 $accent, -1px 1px 0 $accent, 1px -1px 0 $accent,
+        -1px -1px 0 $accent;
+      transform: translate(0.5%, -110%);
+      position: relative;
+      z-index: -1;
+    }
+    .works_card {
+      display: flex;
+      margin-left: 90.5px;
+      margin-bottom: 12.3%;
+      position: relative;
+      @include sp {
+        display: block;
+        margin-bottom: 150px;
+      }
+      .site_img {
+        width: 48%;
+        padding-top: 35.85%;
+        margin-right: 2.4%;
+        background: #dedede;
+        position: relative;
+        @include sp {
+          width: 100%;
+          padding-top: 67.9%;
+        }
+        p {
+          font-size: 3.6rem;
+          width: fit-content;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .site_detail {
+        width: 48%;
+        max-height: 300px;
+        overflow: hidden;
+        @include sp {
+          width: 100%;
+          margin-top: 15px;
+        }
+        time {
+          font-size: 3.2rem;
+          font-family: "Objective";
+          color: $black;
+        }
+        p {
+          line-height: 2;
+          margin-top: 29px;
+          color: $black;
+        }
+      }
+    }
+    .works_card::before {
+      content: "";
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      border: solid 15px $accent;
+      position: absolute;
+      top: 50%;
+      left: -90px;
+      transform: translate(-50%, -50%);
+    }
+    dl {
+      width: 72.2%;
+      margin-left: 234px;
+      padding-right: 4vw;
+      color: $black;
+      @include sp {
+        margin: 0 auto;
+        padding: 0;
+      }
+      dt {
+        font-size: 3.2rem;
+        margin-bottom: 27px;
+      }
+      dd {
+        line-height: 2;
+      }
+    }
+  }
+}
+
+/*===========
+other
+===========*/
+.other_pc {
+  height: 154.5vw;
+  background: #f0f0f0;
+  position: relative;
+  z-index: 1;
+  @include sp {
+    display: none;
+  }
+  .block_top {
+    width: 41%;
+    padding-top: 24.4%;
+    background: $accent;
+    @include pabs(29.9%, 16.1%);
+  }
+  .block_bottom {
+    width: 41%;
+    padding-top: 24.4%;
+    background: $accent;
+    @include pabs(67.2%, 34.5%);
+  }
+  .camera {
+    width: 32.5%;
+    @include pabs(20.5%, 1.7%);
+  }
+  .sp {
+    width: 28.1%;
+    @include pabs(32.5%, 61.9%);
+  }
+  .book {
+    width: 28.1%;
+    @include pabs(39.4%, 20.8%);
+  }
+  .pc {
+    width: 28.1%;
+    @include pabs(52.9%, 53.7%);
+  }
+  .coffee {
+    width: 41%;
+    @include pabs(62.1%, 9.9%);
+  }
+  .txt_top {
+    width: 48.4%;
+    @include pabs(10.8%, 33.9%);
+    color: $black;
+    .result {
+      margin-bottom: 13.7%;
+      .number {
+        margin: 0 15px 0 30px;
+      }
+    }
+    p {
+      width: 77.6%;
+      margin-left: 113px;
+      line-height: 2;
+    }
+  }
+  .txt_bottom {
+    width: 51.7%;
+    @include pabs(77.5%, 34.5%);
+    color: $black;
+    .result {
+      margin: 0 0 13.7% 34.3%;
+      .number {
+        margin: 0 25px;
+      }
+    }
+    p {
+      max-width: 573px;
+      line-height: 2;
+    }
+  }
+}
+
+/* sp用スタイル */
+.other_sp {
+  display: none;
+  background: $gray;
+  @include sp {
+    display: block;
+    padding: 100px 0 100px;
+    position: relative;
+    z-index: 1;
+  }
+  .txt_top {
+    padding: 15px;
+    p {
+      line-height: 2;
+      margin-top: 5%;
+    }
+  }
+  .camera {
+    width: 50%;
+    transform: translateY(50%);
+    position: relative;
+    z-index: 3;
+  }
+  .block_top {
+    width: 60%;
+    padding-top: 40%;
+    background: $accent;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .sp {
+    width: 50%;
+    margin-left: auto;
+    transform: translateY(-30%);
+    position: relative;
+    z-index: 3;
+  }
+  .book {
+    width: 50%;
+    margin: 0 auto;
+  }
+  .pc {
+    width: 50%;
+    margin: 10% 0 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+  .block_bottom {
+    width: 60%;
+    padding-top: 40%;
+    background: $accent;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    position: relative;
+    z-index: 2;
+  }
+  .coffee {
+    width: 70%;
+    transform: translateY(-70%);
+    position: relative;
+    z-index: 3;
+  }
+  .txt_bottom {
+    padding: 0 15px;
+    p {
+      line-height: 2;
+      margin-top: 5%;
+    }
+  }
+}
+
+/*===========
+history
+===========*/
+.history {
+  padding: 21.5% 0 12.7%;
+  &_inner {
+    margin: 0 18.2%;
+    @include sp {
+      margin: 0 15px;
+    }
+    .section_title {
+      margin-bottom: 116px;
+      color: #212121;
+      @include sp {
+        margin-bottom: 60px;
+      }
+    }
+    .section_title::after {
+      content: "History";
+      display: block;
+      color: #fff;
+      text-shadow: 1px 1px 0 $accent, -1px 1px 0 $accent, 1px -1px 0 $accent,
+        -1px -1px 0 $accent;
+      transform: translate(0.5%, -110%);
+      position: relative;
+      z-index: -1;
+    }
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 25px;
+      line-height: 2;
+      th {
+        color: $accent;
+        padding: 37px 30px 34px 69px;
+        border-top: solid 1px $accent;
+        @include sp {
+          padding: 25px 15px 24px;
+        }
+      }
+      td {
+        padding: 38px 0 25px;
+        border-top: solid 1px #707070;
+        color: #222222;
+        @include sp {
+          padding: 25px 0 15px;
+        }
+      }
+    }
+  }
+}
+
+/*===========
+value
+===========*/
+.value {
+  padding-top: 226px;
+  background: #262626;
+  @include sp {
+    padding-top: 100px;
+  }
+  h2 {
+    font-size: 4.8rem;
+    line-height: 1.2;
+    color: #fff;
+    width: fit-content;
+    margin: 0 auto 130px;
+    @include sp {
+      margin: 0 20px 70px;
+    }
+    .pc_br {
+      @include sp {
+        display: none;
+      }
+    }
+  }
+  &::before {
+    content: "My Value";
+    display: block;
+    color: $accent;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 44px;
+  }
+  .slider {
+    li {
+      width: 733px;
+    }
+  }
+  &_bg {
+    padding: 16% 0 19.6%;
+    @include background("../img/sp.png");
+    position: relative;
+    @include sp {
+      padding: 100px 0 125px;
+    }
+    .value_inner {
+      margin: 0 18.2%;
+      padding: 0 15px;
+      p {
+        color: #fff;
+        line-height: 2;
+        position: relative;
+      }
+      p:first-child {
+        margin-bottom: 2em;
+      }
+    }
+  }
+  &_bg::before {
+    content: "";
+    background: rgba(38, 38, 38, 0.91);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/*===========
+footer
+===========*/
+.footer {
+  height: 346px;
+  background: $accent;
+  @include sp {
+    height: 170px;
+  }
+}

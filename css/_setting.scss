@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Objective-bold-italic";
+  src: url("../webfontkit/objective-bold-italic-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Objective-bold";
+  src: url("../webfontkit/objective-bold-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Objective";
+  src: url("../webfontkit/objective-medium-webfont.woff2") format("woff2");
+}
+
+$gray: #f0f0f0;
+$black: #454545;
+$accent: #7ad6bb;
+
+@mixin sp {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin min {
+  @media (min-width: 1281px) {
+    @content;
+  }
+}
+
+@mixin pabs($top: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+@mixin background(
+  $path: null,
+  $pos: center center,
+  $size: cover,
+  $repeat: no-repeat
+) {
+  background: url($path) $pos / $size $repeat;
+}
+
+@function vw($px) {
+  @return $px / 1280 * 100vw;
+}
+
